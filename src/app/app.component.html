@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container text-center">
   <h3 class="text-center mt-5" style="color: rgb(92, 92, 92);">Expense Tracker</h3>
   <hr>
   
   <form  #taskForm="ngForm" action="" class="mt-5 text-center">
   
-    <input type="number" name="exp-amount" id="exp-amount" class="p-3 m-2" placeholder="Expense amount" title="Enter how much was spent." required ngModel>
-  
-    <input type="text" name="exp-name" id="exp-name" placeholder="Add Expense name here" class="p-3 m-2" required ngModel>
+    <input type="number" name="exp-amount" id="exp-amount" class="p-2 my-2" placeholder="Expense amount" title="Enter how much was spent." required ngModel>
+  <br>
+    <input type="text" name="exp-name" id="exp-name" placeholder="Add Expense name here" class="p-2 my-2" required ngModel>
   
     <br>
     <!-- <input type="text" name="description" id="description" placeholder="Add description" class="p-2 w-50"> -->
@@ -23,13 +23,18 @@
         <tr>
           <th scope="col">Expense Name</th>
           <th scope="col">Expense Amount</th>
+          <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let t of expArray; index as i">
-          <td>{{t.expName}}</td>
+          <!-- <td><input type="text" value="{{t.expName}}"[disabled]="!t.isEditable"  id="editExp" [(ngModel)]="t.expName" ></td> -->
+           <td>{{t.expName}}</td>
           <td>{{t.expAmount}}</td>
+          <td><button class="btn btn-outline-primary" (click)="onEdit(i)">
+            {{ t.isEditable ? 'Save' : 'Edit' }}
+          </button></td>
           <td><button class="btn btn-outline-danger" (click)="onDelete(i)">Delete</button></td>
         </tr>
        
