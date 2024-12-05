@@ -63,7 +63,7 @@ export class AppComponent {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success mx-2",
-        cancelButton: "btn btn-danger"
+        cancelButton: "btn btn-outline-danger"
       },
       buttonsStyling: false
     });
