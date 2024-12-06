@@ -103,6 +103,17 @@ export class AppComponent {
     });
 
   }
+
+  else{
+    // alert('Name updated successfully!')
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Name updated successfully!",
+      showConfirmButton: false,
+      timer: 2000
+    });
+  }
 }
 
 // date(){

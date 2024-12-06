@@ -1,4 +1,7 @@
-
+.heading{
+    background-color: rgb(48, 48, 108);
+    color: rgb(235, 235, 235);
+}
 #exp-amount , #exp-name{
     /* border-radius: 9px; */
     border: none;
@@ -42,6 +45,16 @@ th{
     color: rgb(77, 77, 77);
 }
 
+.combine-head{
+    font-size: 19px;
+    font-weight: lighter;
+}
+.x{
+    background: linear-gradient(red, rgb(170, 199, 56));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 @media screen and (max-width: 426px){
     #exp-amount , #exp-name{
         width: 100%;
