@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import moment from 'moment'; 
+
 
 @Component({
   selector: 'app-root',
@@ -12,8 +14,8 @@ export class AppComponent {
 
   title = 'exptracker';
 
-  expArray = [{expName: 'Grocery', expAmount:13000, isEditable: false}];
-
+  expArray = [{expName: 'Grocery', expAmount:13000, isEditable: false,
+     now:moment(new Date()).format('DD-MM-YYYY')}];
   onSubmit(form : NgForm){
 
     console.log(form)
@@ -23,6 +25,7 @@ export class AppComponent {
       expName: form.controls['exp-name'].value,
       expAmount: form.controls['exp-amount'].value,
       isEditable:false,
+      now: moment(new Date()).format('DD-MM-YYYY'),
     })
     form.reset()
   }
@@ -82,7 +85,7 @@ export class AppComponent {
 
         swalWithBootstrapButtons.fire({
           title: "Deleted!",
-          text: "Your file has been deleted.",
+          text: "Your record has been deleted.",
           icon: "success"
         });
       } else if (
@@ -102,5 +105,10 @@ export class AppComponent {
   }
 }
 
+// date(){
+
+//   var now = new Date();
+//   console.log(now)
+// }
 
 }

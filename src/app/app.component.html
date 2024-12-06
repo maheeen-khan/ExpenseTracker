@@ -18,24 +18,28 @@
     <br>
     <button class="btn addbtn w-50 mt-2 b-2" (click)="onSubmit(taskForm)" [disabled] ="taskForm.invalid">Add</button>
   
-    <table class="table mt-5 table-bordered table-striped">
+    <table class="table mt-5">
       <thead>
         <tr>
-          <th scope="col">Expense Name</th>
-          <th scope="col">Expense Amount</th>
+          <th scope="col">Date</th>
+          <th scope="col">Name</th>
+          <th scope="col">Amount</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="tableContent">
         <tr *ngFor="let t of expArray; index as i">
           <!-- <td><input type="text" value="{{t.expName}}"[disabled]="!t.isEditable"  id="editExp" [(ngModel)]="t.expName" ></td> -->
+          <td>{{t.now}}</td>
            <td>{{t.expName}}</td>
           <td>{{t.expAmount}}</td>
           <td><button class="btn btn-outline-primary" (click)="onEdit(i)">
-            {{ t.isEditable ? 'Save' : 'Edit' }}
+            <i class="fa fa-edit"></i>
           </button></td>
-          <td><button class="btn btn-outline-danger" (click)="onDelete(i)">Delete</button></td>
+          <td><button class="btn btn-outline-danger" (click)="onDelete(i)">
+            <i class="fa fa-trash-o"></i>
+          </button></td>
         </tr>
        
       
